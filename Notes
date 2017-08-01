@@ -1,0 +1,65 @@
+- Javascript, TypeScript, CoffeeScript, NativeScript
+
+npm install -g typescript --- installation of typescript compiler
+
+npm config edit 
+
+proxy=http://HBAD920069GFTR:Welcome1@10.158.11.157:8080/
+strict-ssl=false
+
+Only access modifiers allowed are public and private. By default it is public
+
+code needs to be compiled to javascipt
+
+To compile -- tsc person.ts
+
+If you have any compilaton errors, then typescript compiler throws an error but at the same time it also generates the js file as the js file is typesafe
+
+can have either parametrized or non-parametrized constructor but not both
+
+constructor keyword is used for creating constructor
+
+if you dont declare the dataaype the variable, then it is "any"
+
+npm install -g @angular/cli
+
+use nativescript for building mobile native apps (like typescript for web apps)
+
+Angular 2 follows component based model
+
+Also follows depenedency injection pattern... In angular we will use constructor based injection
+
+DI Containers - StructureMap, Unity..etc
+
+Component
+Service
+Directive
+Pipe
+Module
+
+nu-get packages
+
+@Component is a decorator - wherever you find the @ symbol-its the decorator
+
+ng g c footer
+
+--------
+steps in cmd
+
+npm install -g typescript
+
+npm install -g @angular/cli
+
+ng new broadkart --- inside the "Broadkart" folder just created
+
+cd broadkart 
+
+ng serve ----- starts the app on server
+	
+
+ng g c header --- to create header components
+Similarly, ng g c footer , ng g c logo
+
+localhost:4200
+
+
