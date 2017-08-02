@@ -1,0 +1,12 @@
+Any external modules which you import in app.module.ts should be a part of imports 
+ngModel did not work inside folr tag.. There was an error in the console because of which the form tag was changed to div tag
+All the events must be enclosed in the braces - eg. ((click)) for button
+Sqyare brackets will automatically bind the value to attribue - eg [disabled] attribute for button
+In Angular 1 we had 2 way binding
+In Angular 2, it is only 1 way binding - from the component to the view. Not from the view to component
+The 2 way binding was removed because the algorithm which they used. The algorithm is known as dirty checking algorithm which is not good and efficient. 
+In Angular 2 it is event based architecture because of which it is not required.
+
+Eg. In our sample app, we have a profile object which is first created in the register.component.ts, and then this profile object is used in the register.component.html.
+In Angular 1, without even creating the profile object, if we had used that, then it would have added it in the global object, which is not the case here. Without declaring the profile object in the register.component.ts file, this can't be used.
+That's why we say 2 way binding is not possible - i.e. binding from view to component is not available.
