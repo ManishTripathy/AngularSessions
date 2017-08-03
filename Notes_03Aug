@@ -1,0 +1,101 @@
+ROUTING
+
+1. import {RouterModule} from '@angular/router'; in the app.module.ts
+2. create a variable routes which is a combination of path and components in the app.module.ts like given below
+  var routes=[
+    {path:"register", component:"RegisterComponent"},
+    {path:"products", component:"ProductsComponent"}
+  ];
+  
+  
+  
+data passing in between the components can be done using service
+
+Data driven reusable components
+
+@Input
+This is a decorator which when used to decorate the property of a component, will be visible to the parent component to be used as an
+attribute. The data from parent component can be then passed to the child component for use.
+
+Eg. In dropdown.component.ts --- 'configuration' property is marked as @Input.
+The selector for this component is 'app-dropdown'. This 'app-dropdown' component is then used in register.component.html like below - 
+      <app-dropdown [configuration]="dropdownConfig"></app-dropdown>
+      
+You can notice here that the configuration property is now available here as an attribute.
+In register.component.ts(which is the parent component) - we have the property "dropdownConfig" which we want to be used as the configuration 
+attribute. In the above syntax we are doing the same. We are using the parent component's data(dropdownConfig) in the child component tag. 
+This is how the data from the parent component is passed to the child component.
+
+Debuggingin Chrome
+-----------
+Click on sources tab
+press Ctrl+O... Type in the file name which you want to debug
+Put breakpoints and use F10 and F11 for debugging
+
+-------------
+@Output decorator is used to pass on events from the child component to the parent component
+Changes are - 
+1. Import Ouput and EventEmitter from @agular/core
+2. In dropdown.component.ts - 
+
+  @Output()
+  drowpdownchange : EventEmitter<String>
+
+  selectedvalue : String
+
+  valuechanged() {
+    this.drowpdownchange.emit(this.selectedvalue);
+  }
+  
+ 3. Now in the drpdown.config.html - 
+ To the select tag add the following attributes - 
+  (change)="valuechanged()" [(ngModel)]="selectedvalue"....
+  Finally <select> tag looks like - 
+  
+      <select [ngClass]="configuration.cssClass" (change)="valuechanged()" [(ngModel)]="configuration.selectedvalue">
+          <option *ngFor="let i of configuration.data" [value]="i.value">{{i.text}}</option>
+      </select>
+      
+  4. In the register.component.html, 
+      <app-dropdown [configuration]="dropdownConfig" 
+      (drowpdownchange)="countrychanged($event)"></app-dropdown>
+      
+ 5. In register.component.ts, - 
+    i. Add dropdownConfig as a property of type DropDownConfig(This is defined in common folder)
+    ii. In the constructor
+        this.dropdownConfig = new DropDownConfig();
+        this.dropdownConfig.cssClass = "form-control";
+        this.dropdownConfig.selectedvalue = "IN";
+    iii. Add this method and call it from the construcntor - 
+        Here the dropdownconfig.data is set. Look below - 
+        
+        
+        getCountriesDropdownAsync() {
+            this.dataSvc.getDataFromAPi(AppConstants.COUNTRIES_API)
+            .then(res=>{
+                console.log(res);
+                this.dropdownConfig.data = res.map(x=>{
+                  let y = 
+                  {
+                    value : x.code,
+                    text : x.name
+                  }
+                  return y;
+                })
+            })
+            .catch(res=> {
+              console.log(res);
+            })
+      }
+  
+  
+  
+  
+  
+  @Input is usually meant for data and @output is usually meant for events, .
+  
+  Tomorrow we will see - 
+  rxjx - reactive programming with javascript.
+  
+  Monday - validations ---- Tuesday - Deployment
+
