@@ -1,0 +1,32 @@
+gitlab.com/k3informatics/broadridge-aug
+
+Authentication -- ? Not done because database was not up
+
+Reactive forms - model driven forms
+
+To create reactive forms 
+1. Import the ReactiveFormsModule(from @angular/core) 
+2. Add it as a part of the imports in the @NgModule
+3. 
+
+
+minlength and maxlength are HTML 5 based validations
+
+Reactive Programming
+Its available in Java and other languages too
+https://www.learnrxjs.io/
+
+the httpget and map methods are by default Observable
+
+Take example of autocomplete dropdown - 
+debounce is possible in rxjs Observable
+
+After dev, we can see that we are not sharing the data.--- Brief on this later
+http://rxjs.ng-book.com/
+
+For chat apps, rxjs observable patters is best. Even for push notifications
+RXJS features - 
+1. Debounce
+
+
+How to integrate 3rd party library like ng-prime
