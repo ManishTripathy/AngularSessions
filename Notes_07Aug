@@ -1,0 +1,22 @@
+Today's topics
+---------
+1. Pipes and Custome pipes
+2. Directives 
+3. How to convert exising jquery plugins into Angular directives
+
+------------
+Pipes help in formatting the input privided and render the output
+Pipes can be chained
+Difference between components and directives is components are elements but directives are attribute based
+Attribute based direcatives
+HostListener is responsible to attach events to the control
+Use AngularIDE
+
+Covert existing jQueryUI - DatePicker into customized directive
+  
+  npm install @types/jquery --save
+  
+  
+  
+  child constructor runs and then 
+  we are puting mymindate and mamaxdate as variables inside the constructor of the component-- check the lifecycle.
