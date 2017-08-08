@@ -1,0 +1,19 @@
+
+
+OnChanges fired first
+doCheck will be fired if any change happens in any component in UI - This can be a performamce issue
+
+YOu can check for global Listerners in the source
+Use ngOnDestroy to unsubscribe to events
+
+In Directives you can use ViewContainerRef to access the parent of the element.... Similar to the way we access ElementRef in the directive
+Use LocalSessionStorage or make use of service to store 
+
+ng build
+ng build --prod
+Angular uses by default the Just In Time Compiler to compile. Drawback - When any changes made, it sends a request to server to compile
+Here it is compiled and rendered
+
+Another compilation model - AOT(Ahead of Time) compilation.
+This way the code is compiled ahead of time and then its only rendered. 
+
